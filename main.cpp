@@ -1,5 +1,4 @@
 #include <SFML/Graphics.hpp>
-<<<<<<< HEAD
 #include "Player.h"
 #include "Weapon.h"
 #include "EnemyManager.h"
@@ -17,14 +16,6 @@ int main()
 
 	sf::RectangleShape rectangle1(sf::Vector2f(120.f, 120.f));
 	rectangle1.setFillColor(sf::Color(50, 0, 50));
-=======
-
-int main()
-{
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
->>>>>>> db230cd74d97d48dc994fa2b709adc182fa43eb3
 
 	while (window.isOpen())
 	{
@@ -32,8 +23,9 @@ int main()
 		while (window.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
+			{
 				window.close();
-<<<<<<< HEAD
+			}	
 			if (event.type == sf::Event::Resized)
 			{
 				// update the view to the new size of the window
@@ -70,17 +62,9 @@ int main()
 		weapon.update(elapsed.asSeconds(), player.getPosition(), player.sprite.getRotation());
 		enemyManager.update(elapsed.asSeconds(), player.getPosition());
 		window.draw(rectangle1);
+
 		clock.restart();
-
 		window.display();
-=======
-		}
-
-		window.clear();
-		window.draw(shape);
-		window.display();
-		//sad
->>>>>>> db230cd74d97d48dc994fa2b709adc182fa43eb3
 	}
 
 	return 0;
